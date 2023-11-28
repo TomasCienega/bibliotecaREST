@@ -22,6 +22,9 @@ public class Autor {
     private String apellidos;
     private String telefono;
 
+    //el one to many es el que recibe la referencia creada en el many to one
+    @OneToMany(mappedBy = "autor")
+    private List<Libro> libros;
     public Autor(AutorDTO autorDTO) {
         this.id = autorDTO.getId();
         this.nombres = autorDTO.getNombres();
@@ -29,6 +32,5 @@ public class Autor {
         this.telefono = autorDTO.getTelefono();
     }
 
-    //@OneToMany(mappedBy = "autor") el one to many es el que recibe la referencia creada en el many to one
-    //List<Libro> libros;
+
 }
